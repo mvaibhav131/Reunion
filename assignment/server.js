@@ -2,7 +2,7 @@
 const express=require('express');
 const dotenv= require("dotenv");
 const connection = require("./database");
-// const productroutes=require("./routes/productRoute");
+const postroutes=require("./routes/postRoutes");
 const userroute=require("./routes/userRoutes");
 const errorMiddlewares= require("./middleware/error");
 const cookieParser= require("cookie-parser");
@@ -19,7 +19,7 @@ app.use(cookieParser());
 dotenv.config({path:'config/config.env'});
 
 //Route
-// app.use("/api",productroutes);
+app.use("/api",postroutes);
 app.use("/api",userroute);
 
 //Middlewares
